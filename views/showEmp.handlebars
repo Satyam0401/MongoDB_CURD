@@ -1,0 +1,22 @@
+<div class=" container">
+    <h1>Show All User</h1>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">fullName</th>
+      <th scope="col">email</th>
+      <th scope="col">city</th>
+      <th scope="col">phone</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each list}}
+    <tr class="table-active">
+      <th scope="row">{{this.fullName}}</th>
+      <td>{{this.email}}</td>
+      <td>{{this.city}}</td>
+      <td>{{this.mobile}}</td>
+    </tr>
+    {{/each}}
+</div>
