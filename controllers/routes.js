@@ -48,5 +48,37 @@ router.get('/delete-all-emp',(req,res)=>{
     })
 })
 
+router.get('/deleteSpecific/:uid',(req,res)=>{
+    Employee.findByIdAndDelete(req.params.uid,(err,result)=>{
+        if(!err){
+            res.redirect('/emp/show-all-emp')
+        }
+    })
+})
 
+
+router.get('/preUpdate/',(req,res)=>{
+    Employee.find((err,result)=>{
+        if(!err){
+             res.render('preUpdate',{list:result})
+        }
+    })
+})
+
+
+router.get('/preUpdate/:id',(req,res)=>{
+    Employee.findById(req.params.id, (err,result)=>{
+if(!err){
+    res.render('preEmp',{emp:result})
+}
+    })
+})
+
+router.post("/finalUpdate",(req,res)=>{
+Employee.findByIdAndUpdate(req.body.id,req.body,{new:true},(err,result)=>{
+if(!err){
+    res.redirect("/emp/show-all-emp")
+}
+})
+})
 module.exports = router  

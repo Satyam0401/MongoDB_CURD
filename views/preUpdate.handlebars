@@ -7,7 +7,7 @@
       <th scope="col">email</th>
       <th scope="col">city</th>
       <th scope="col">phone</th>
-      <th scope="col">Delete</th>
+      <th scope="col">Update</th>
 
     </tr>
   </thead>
@@ -18,7 +18,7 @@
       <td>{{this.email}}</td>
       <td>{{this.city}}</td>
       <td>{{this.mobile}}</td>
-      <td><a href="/emp/deleteSpecific/{{this._id}}" class="btn btn-danger">Delete</a></td>
+      <td><a href="/emp/preUpdate/{{this._id}}" class="btn btn-info">Update</a></td>
     </tr>
     {{/each}}
 </div>
